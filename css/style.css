@@ -27,12 +27,16 @@ nav ul{
 
 nav li{
   /*Your code here */
+  justify-self: right;
+  padding-right: 20px;
+  text-decoration: none;
+  display: inline;
 }
 
 nav a{
   color: black;
   font-weight: bold;
-  text-decoration: /*Your code here - remove the underline*/;
+  text-decoration: none;/*Your code here - remove the underline*/;
 }
 
 nav a:hover{
@@ -50,13 +54,13 @@ nav a:hover{
   z-index: 1;
 }
 
-/*Your code here*/{
+/*Your code here*/
 /*Add the selector and rule to move the skip link to the exact top.*/
-}
 
-/*Your code here*/{
+
+/*Your code here*/
 /*Add the selector and code to put a 2px black border around all elements in focus.*/
-}
+
 
 
 footer{
@@ -74,11 +78,21 @@ footer{
   /*Your code here  */
 
   /*Provided*/
-  grid-template-rows: 30px auto auto auto auto auto 100px; 
-  width: 100vw; 
+display: grid;
+grid-template-rows: 30px auto auto auto auto auto 100px; 
+width: 100vw; 
+grid-template-columns: 100px 500px 100px;
+row-gap: 15px;
+/* grid-column-gap: 0px; */
+/* grid-row-gap: 15px; */
+
 }
 
 .nav{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 1/ span 1;
    /*Your code here */
 
   /*Provided*/
@@ -86,10 +100,26 @@ footer{
   padding: 20px 0; 
   text-align: left; 
 }
+/* #main{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2/ span 2;
+  background-image: url("../images/header.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  width:100%;   */
+  /* Make sure to change image to fit mobily responsive */
+  
 
 header{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2/ span 2;
   background-attachment: fixed; /* Parallax effect */
-  background-image: url();      /* Your code here - Link to header.jpg in the images folder */
+  background-image: url("../images/header.jpg");      /* Your code here - Link to header.jpg in the images folder */
   background-position: center;  /* Parallax effect */
   background-repeat: no-repeat; /* Parallax effect */
   background-size: cover;       /* Parallax effect */
@@ -107,11 +137,29 @@ header p{
 }
 
 .about-image{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 3/ span 3;
+  position: absolute;
+  z-index: 1;
   /*Your code here */
 
 }
 
 .about{
+  display: grid;
+  vertical-align: middle;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 3/ span 3;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  width: 50%;
+  /* vertical-align: center; */
+
+  
   /*Your code here */
 }
 
@@ -149,72 +197,3 @@ header p{
 }
 
 
-
-@media /*Your code here - Add the first media query.*/{
-
-  .container{
-    /*Your code here */
-    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;*/
-  }
-
-  .nav{
-    background-color: #ddd;
-
-     /*Your code here */
-  }
-
-  .about-image{
-     /*Your code here */
-    }
-
-  .about{
-    /*Your code here */
-  }
-
-  .method-image{
-    /*Your code here */
-  }
-
-  .method{
-    /*Your code here */
-  }
-
-  .clients-image{
-    /*Your code here */
-
-  }
-
-  .clients{
-    /*Your code here */
-  }
-
-  .contact-image{
-    /*Your code here */
-  }
-
-  .contact{
-    /*Your code here */
-   }
-
-}  /*End the media query*/
-
-@media screen and (prefers-reduced-motion: reduce){
-  html{
-      scroll-behavior: auto; /* Removes scroll animation */
-  }
-
-  .skip a{
-    background: white;
-    left: 0;
-    padding: 6px;
-    position: absolute;
-    top: -40px;
-    -webkit-transition: /* Your code here - set to default setting */
-    transition: /* Your code here - set to default setting */
-    z-index: 1;
-  }
-
-  .skip a:focus{
-    top:0;
-  }
-}
