@@ -27,10 +27,9 @@ nav ul{
 
 nav li{
   /*Your code here */
-  justify-self: right;
   padding-right: 20px;
   text-decoration: none;
-  display: inline;
+  display: inline-block;
 }
 
 nav a{
@@ -38,21 +37,34 @@ nav a{
   font-weight: bold;
   text-decoration: none;/*Your code here - remove the underline*/;
 }
+nav a:focus{
+  border: 2px solid black;
+}
 
 nav a:hover{
-  text-decoration: /*Your code here - add the underline*/;
+  text-decoration: underline;/*Your code here - add the underline*/
 }
 
 .skip a{
   background: white;
   left: 0;
   padding: 6px;
-  position: /*Your code here - position relative to the parent */;
-  top:      /*Your code here - place 40px higher */;
+  position: relative;/*Your code here - position relative to the parent */;
+  top:   -40px;   /*Your code here - place 40px higher */;
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
 }
+.skip a:focus, .skip a:active{
+border: 2px solid black; 
+left: auto;
+top: auto;
+height: auto;
+overflow: auto;
+margin: 40px;
+padding: 6px;
+z-index: 999;
+  }
 
 /*Your code here*/
 /*Add the selector and rule to move the skip link to the exact top.*/
@@ -78,48 +90,28 @@ footer{
   /*Your code here  */
 
   /*Provided*/
-display: grid;
+display: grid;
 grid-template-rows: 30px auto auto auto auto auto 100px; 
 width: 100vw; 
-grid-template-columns: 100px 500px 100px;
-row-gap: 15px;
-/* position: relative;
-text-align: center; */
-/* grid-column-gap: 0px; */
-/* grid-row-gap: 15px; */
-
+grid-template-columns: 1fr 5fr 1fr;
+grid-row-gap: 15px;
 }
 
 .nav{
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 1/ span 1;
+  grid-column: 1/ -1;
+  grid-row: 1/ auto;
    /*Your code here */
 
   /*Provided*/
   background-color: #ddd;
   padding: 20px 0; 
   text-align: left; 
-}
-/* #main{
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 2/ span 2;
-  background-image: url("../images/header.jpg");
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  width:100%;   */
-  /* Make sure to change image to fit mobily responsive */
   
+}
+ 
 
 header{
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 2/ span 2;
+
   background-attachment: fixed; /* Parallax effect */
   background-image: url("../images/header.jpg");      /* Your code here - Link to header.jpg in the images folder */
   background-position: center;  /* Parallax effect */
@@ -128,7 +120,10 @@ header{
   color: white;
   height: 400px;                /* Parallax effect */
 
-  /*Your code here - cover the entire row*/
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
 }
 
 header p{
@@ -139,26 +134,23 @@ header p{
 }
 
 .about-image{
-  display: grid;
   grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 3/ span 3;
-  position: absolute;
-  z-index: 1;
+  grid-column-end: -1;
+  grid-row-start: 3;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
+  /* position: absolute;
+  z-index: 1; */
   /*Your code here */
 
 }
 
 .about{
-  display: grid;
-  vertical-align: middle;
   grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row: 3/ span 3;
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
-  width: 50%;
+  grid-column-end: span 1;
+  grid-row-start: 3;
+  grid-row-end: span 1;
   /* vertical-align: center; */
 
   
@@ -166,60 +158,70 @@ header p{
 }
 
 .method-image{
-  display: grid;
   grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 4/ span 4;
-  position: absolute;
-  z-index: 1;
+  grid-column-end: -1;
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
   /*Your code here */
 }
 
 .method{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 4;
+  grid-row-end: span 1;
     /*Your code here - start in the 2nd column*/
 }
 
 .clients-image{
-  display: grid;
   grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 5/ span 5;
-  position: absolute;
-  z-index: 1;
+  grid-column-end: -1;
+  grid-row-start: 5;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
  /*Your code here */
 }
 
 .clients{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 5;
+  grid-row-end: span 1;
  /*Your code here */
 }
 
 .contact-image{
-  display: grid;
   grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row: 6/ span 6;
-  position: absolute;
-  z-index: 1;
+  grid-column-end: -1;
+  grid-row-start: 6;
+  grid-row-end: span 1;
+  max-height: 700px;
+  overflow: hidden;
    /*Your code here */
 }
 
 .contact{
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 6;
+  grid-row-end: span 1;
    /*Your code here */
 }
 
 .text-block{
-  display: grid;
-  vertical-align: middle;
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
-  width: 50%;
 
    /*Your code here */
   
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
+
+  align-self: center;
+  justify-self: center;
 }
+
 
 
