@@ -83,6 +83,8 @@ grid-template-rows: 30px auto auto auto auto auto 100px;
 width: 100vw; 
 grid-template-columns: 100px 500px 100px;
 row-gap: 15px;
+/* position: relative;
+text-align: center; */
 /* grid-column-gap: 0px; */
 /* grid-row-gap: 15px; */
 
@@ -164,6 +166,12 @@ header p{
 }
 
 .method-image{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 4/ span 4;
+  position: absolute;
+  z-index: 1;
   /*Your code here */
 }
 
@@ -172,6 +180,12 @@ header p{
 }
 
 .clients-image{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 5/ span 5;
+  position: absolute;
+  z-index: 1;
  /*Your code here */
 }
 
@@ -180,6 +194,12 @@ header p{
 }
 
 .contact-image{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 6/ span 6;
+  position: absolute;
+  z-index: 1;
    /*Your code here */
 }
 
@@ -188,6 +208,12 @@ header p{
 }
 
 .text-block{
+  display: grid;
+  vertical-align: middle;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  width: 50%;
 
    /*Your code here */
   
